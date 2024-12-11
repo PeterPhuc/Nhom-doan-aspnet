@@ -1,15 +1,60 @@
-- Mở Microsoft SQL Server: chạy file QLSTORE.sql
+# Overview
 
-- mở project bằng Visual Studio và chạy project
+This project is a bookstore management website. This book selling website management system will provide users with an account to log in and log out to use this website. With a login account, the system will determine whether the person logging in is an employee or a manager. From there, the system will provide corresponding permissions for each login account. For customers, the website provides customers with customer-specific functions such as logging in, changing profile, shopping cart, searching for products, viewing placed orders, etc.
 
-*tài khoản đăng nhập: (Có hash password trước khi lưu vào cơ sở dữ liệu)
-superadmin - 123456
-admin - 123456
-customer1 - 123456
 
-Thay đổi chuỗi kết nối database ở file ConstValue.cs, không lấy Trust Server Certificate=True
+## Features
+Product management
+- Add, edit, delete products
+- Product information management: product code, product name, product description, selling price, inventory,...
+- Manage product categories
+- Order management
 
-Truy cập Admin: https://localhost:44300/Manager
-Tài khoản admin quyền cao nhất (Quyền CRUD tài khoản khác) có Authority là 2
-Tài khoản admin thường (Không có quyền CRUD tài khoản khác) có Authority là 1
-Tài khoản khách hàng có Authority là 0
+Sales management
+- Manage customer information: customer name, address, phone number,...
+- Manage customer invoice history
+- Calculate money, print invoices
+
+Customer management: manage customer information
+
+Account management:
+- Super Admin: This is the main subject with the highest authority to use the software to manage all business activities of the store, including:
+    + Manage goods: Add, edit, delete goods.
+    + Sales management: Billing, order management, etc.
+    + Employee management: Add, edit, delete, assign rights,...
+- Regular Admin: This object also has the same rights as Super Admin, except for managing user accounts and other admins.
+- Customer
+
+## Tech Stack
+
+**Client:** HTML, CSS, Javascript, Jquery, Bootstrap
+
+**Server:** ASP.NET Core MVC
+
+**Database:** Microsoft SQL Server
+
+
+## Installation
+Clone this project: 
+```bash
+  https://github.com/PeterPhuc/Nhom-doan-aspnet.git
+```
+
+Change to your ConnectionStrings:
+```bash
+  Data Source=[YOUR_SERVER_NAME];Initial Catalog=QLStore;Integrated Security=True
+```
+
+Run project:
+```bash
+  dotnet run
+```
+
+## Authors
+
+| Leader          | Member         | Member         |
+|-----------------|----------------|----------------|
+|Nguyễn Thành Đạt      | Lê Hoàng Nhật Thảo   | Lê Trung Tín   | 
+
+#### Contact email:
+- [trungtin.le1505@gmail.com](mailto:trungtin.le1505@gmail.com)
